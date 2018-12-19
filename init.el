@@ -88,6 +88,7 @@
      ido-completing-read+
      ido-vertical-mode
      inflections
+     lsp-java
      magit
      markdown-mode
      move-text
@@ -165,6 +166,7 @@
 (eval-after-load 'js2-mode '(require 'setup-js2-mode))
 (eval-after-load 'ruby-mode '(require 'setup-ruby-mode))
 (eval-after-load 'clojure-mode '(require 'setup-clojure-mode))
+(eval-after-load 'java-mode '(require 'setup-java-mode))
 (eval-after-load 'markdown-mode '(require 'setup-markdown-mode))
 
 ;; Load stuff on demand

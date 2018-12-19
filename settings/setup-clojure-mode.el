@@ -57,7 +57,7 @@
 
 (require 'cider)
 
-(define-key cider-repl-mode-map (kbd "<home>") nil)
+;;(define-key cider-repl-mode-map (kbd "<home>") nil)
 (define-key cider-repl-mode-map (kbd "C-,") 'complete-symbol)
 (define-key cider-mode-map (kbd "C-,") 'complete-symbol)
 (define-key cider-mode-map (kbd "C-c C-q") 'nrepl-close)
