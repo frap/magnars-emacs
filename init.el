@@ -3,7 +3,30 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
+;; Install use-package if necessary
+(require 'package)
+(setq package-enable-at-startup nil)
+(setq package-archives (append package-archives
+                               '(("melpa" . "http://melpa.org/packages/")
+                                 ("marmalade" . "http://marmalade-repo.org/packages/")
+                                 ("gnu" . "http://elpa.gnu.org/packages/")
+                                 ("org" . "http://orgmode.org/elpa/")
+                                 ("elpy" . "http://jorgenschaefer.github.io/packages/"))))
 (package-initialize)
+
+;; Bootstrap `use-package'
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(use-package delight :ensure t)
+
+;; Enable use-package
+(eval-when-compile
+  (require 'use-package))
+(require 'delight)                ;; if you use :diminish
+(require 'bind-key)                ;; if you use any :bind variant
+
 
 ;; Remove security vulnerability
 (eval-after-load "enriched"
